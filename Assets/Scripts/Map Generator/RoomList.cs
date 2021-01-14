@@ -9,7 +9,7 @@ public class RoomList : ScriptableObject{
     private List<MapRoom> Rooms;
 
     //TODO
-    private MapRoom GetRandomRoom(){
+    public MapRoom GetRandomRoom(){
         return null;
     }
 }

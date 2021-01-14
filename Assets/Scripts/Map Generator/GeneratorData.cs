@@ -9,9 +9,24 @@ public class GeneratorData : ScriptableObject
     private List<RoomList> RoomLists;
     [SerializeField]
     private Vector2 MapSize;
+    [SerializeField]
+    private Vector2 RoomSize;
 
-    private void PullRandomRoom(){
+    public MapRoom PullRandomRoom(DoorConfiguration DoorConfig){
+        foreach(RoomList roomList in RoomLists){
+            if (DoorConfiguration.CompareConfigs(DoorConfig, roomList.config)){
+                return roomList.GetRandomRoom();
+            }
+        }
+        return null;
+    }
 
+    public Vector2 GetMapSize(){
+        return MapSize;
+    }
+    
+    public Vector2 GetRoomSize(){
+        return RoomSize;
     }
 }
 
