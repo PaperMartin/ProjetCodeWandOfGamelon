@@ -16,4 +16,8 @@ public class GeneratedMap
     public void SetMap(MapRoom[,] NewMap){
         map = NewMap;
     }
+
+    public void SetRoomSize(Vector2 RoomSize){
+        roomSize = RoomSize;
+    }
 }

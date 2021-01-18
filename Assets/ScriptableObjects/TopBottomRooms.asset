@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52a037c8a99fc8e41a20f3136ec68000, type: 3}
-  m_Name: TopBottom
+  m_Name: TopBottomRooms
   m_EditorClassIdentifier: 
   config:
     TopOpen: 1

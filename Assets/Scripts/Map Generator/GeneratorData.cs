@@ -6,9 +6,11 @@ using UnityEngine;
 public class GeneratorData : ScriptableObject
 {
     [SerializeField]
+    private int DungeonLength;
+    [SerializeField]
     private List<RoomList> RoomLists;
     [SerializeField]
-    private Vector2 MapSize;
+    private Vector2Int MapSize;
     [SerializeField]
     private Vector2 RoomSize;
 
@@ -21,7 +23,11 @@ public class GeneratorData : ScriptableObject
         return null;
     }
 
-    public Vector2 GetMapSize(){
+    public int GetLevelLength(){
+        return DungeonLength;
+    }
+
+    public Vector2Int GetMapSize(){
         return MapSize;
     }
     
@@ -29,4 +35,3 @@ public class GeneratorData : ScriptableObject
         return RoomSize;
     }
 }
-
