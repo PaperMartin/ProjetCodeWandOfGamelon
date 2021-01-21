@@ -10,6 +10,6 @@ public class RoomList : ScriptableObject{
 
     //TODO
     public MapRoom GetRandomRoom(){
-        return null;
+        return Rooms[Random.Range(0, Rooms.Count)];
     }
 }
