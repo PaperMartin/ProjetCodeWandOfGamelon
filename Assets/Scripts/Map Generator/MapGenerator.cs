@@ -9,7 +9,8 @@ public class MapGenerator : MonoBehaviour
 
     private List<Vector2Int> Directions = new List<Vector2Int>();
 
-    private void Start() {
+    private void Start()
+    {
         GenerateMap();
     }
 
@@ -37,9 +38,63 @@ public class MapGenerator : MonoBehaviour
         return Path;
     }
 
+    private List<DoorConfiguration> GenerateDoorConfig(List<Vector2Int> path)
+    {
+        List<DoorConfiguration> doorconfig = new List<DoorConfiguration>();
+        for (int i = 0; i < path.Count; i++)
+        {
+            DoorConfiguration CurrentConfig = new DoorConfiguration();
+            if (i != 0)
+            {
+                if (path[i - 1].x > path[i].x)
+                {
+                    CurrentConfig.RightOpen = true;
+                }
+                if (path[i - 1].x < path[i].x)
+                {
+                    CurrentConfig.LeftOpen = true;
+                }
+                if (path[i - 1].y > path[i].y)
+                {
+                    CurrentConfig.TopOpen = true;
+                }
+                if (path[i - 1].y < path[i].y)
+                {
+                    CurrentConfig.BottomOpen = true;
+                }
+            }
+
+            if (i != path.Count - 1)
+            {
+                if (path[i + 1].x > path[i].x)
+                {
+                    CurrentConfig.RightOpen = true;
+                }
+                if (path[i + 1].x < path[i].x)
+                {
+                    CurrentConfig.LeftOpen = true;
+                }
+                if (path[i + 1].y > path[i].y)
+                {
+                    CurrentConfig.TopOpen = true;
+                }
+                if (path[i + 1].y < path[i].y)
+                {
+                    CurrentConfig.BottomOpen = true;
+                }
+            }
+
+            doorconfig.Add(CurrentConfig);
+        }
+
+        return doorconfig;
+    }
+
     //temp function
-    private void TempSpawnPath(List<Vector2Int> path){
-        foreach(Vector2Int room in path){
+    private void TempSpawnPath(List<Vector2Int> path)
+    {
+        foreach (Vector2Int room in path)
+        {
             GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             cube.transform.position = new Vector3(room.x * 2, room.y * 2, 0);
         }
@@ -47,7 +102,8 @@ public class MapGenerator : MonoBehaviour
 
     private bool PickNextPathPart(List<Vector2Int> path)
     {
-        if (path.Count == data.GetLevelLength()){
+        if (path.Count == data.GetLevelLength())
+        {
             return true;
         }
         Vector2Int CurrentPosition = path[path.Count - 1];
