@@ -18,8 +18,20 @@ public class MapGenerator : MonoBehaviour
     {
         GeneratedMap generatedMap = new GeneratedMap();
         generatedMap.SetRoomSize(data.GetRoomSize());
+        MapRoom[,] mapRoom = new MapRoom[data.GetMapSize().x, data.GetMapSize().y];
+        generatedMap.SetMap(mapRoom);
+
         List<Vector2Int> RoomPositions = GeneratePath(data.GetMapSize());
         TempSpawnPath(RoomPositions);
+        List<DoorConfiguration> doorconfig = GenerateDoorConfig(RoomPositions);
+        List<MapRoom> roomlist = GenerateRoomList(doorconfig);
+
+        for (int i = 0; i < RoomPositions.Count; i++)
+        {
+            Vector2Int CurrentPos = RoomPositions[i];
+            MapRoom CurrentRoom = roomlist[i];
+            mapRoom[CurrentPos.x, CurrentPos.y] = CurrentRoom;
+        }
 
     }
 
@@ -38,6 +50,7 @@ public class MapGenerator : MonoBehaviour
         return Path;
     }
 
+    //Generate a list of door configuration for a path, each configuration being based on the previous and next room's position relative to the current room
     private List<DoorConfiguration> GenerateDoorConfig(List<Vector2Int> path)
     {
         List<DoorConfiguration> doorconfig = new List<DoorConfiguration>();
@@ -88,6 +101,19 @@ public class MapGenerator : MonoBehaviour
         }
 
         return doorconfig;
+    }
+
+    //Picks a list of random rooms based on a list of door configurations
+    private List<MapRoom> GenerateRoomList(List<DoorConfiguration> doorconfig)
+    {
+        List<MapRoom> rooms = new List<MapRoom>();
+
+        foreach (DoorConfiguration config in doorconfig)
+        {
+            rooms.Add(data.PullRandomRoom(config));
+        }
+
+        return rooms;
     }
 
     //temp function
@@ -173,6 +199,26 @@ public class MapGenerator : MonoBehaviour
         //Return false if no viable path
         return false;
     }
+
+    private void InstantiateMap(GeneratedMap map)
+    {
+        Vector2Int CurrentPos = Vector2Int.zero;
+
+        for (CurrentPos.x = 0; CurrentPos.x < map.MapSize.x; CurrentPos.x++)
+        {
+            for (CurrentPos.y = 0; CurrentPos.y < map.MapSize.y; CurrentPos.y++)
+            {
+                MapRoom currentRoom = map.GetRoomAtPosition(CurrentPos);
+                if (currentRoom != null)
+                {
+                    GameObject instantiatedRoom = Instantiate(currentRoom.GetRoomPrefab(), new Vector3(CurrentPos.x * map.GetRoomSize().x, CurrentPos.y * map.GetRoomSize().y, 0), Quaternion.identity);
+                    instantiatedRoom.name = "Room " + CurrentPos;
+                }
+
+            }
+        }
+    }
+
 
     private void ShuffleDirections()
     {
