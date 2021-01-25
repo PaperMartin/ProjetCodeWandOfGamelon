@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/IA/Player/Angel Actions.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Player/Angel Actions.inputactions'
 
 using System;
 using System.Collections;
@@ -32,7 +32,7 @@ public class @AngelActions : IInputActionCollection, IDisposable
                     ""id"": ""43789484-c3eb-4dcc-8fd4-8f9b4b1c86dd"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [

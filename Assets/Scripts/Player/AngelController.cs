@@ -13,6 +13,7 @@ public class AngelController : MonoBehaviour
     public bool isWalking;
 
     private Animator _animator;
+    public Animator _AIAnimator;
 
     public Walk _walk;
 
@@ -24,7 +25,7 @@ public class AngelController : MonoBehaviour
     {
         _angelActions = new AngelActions();
         _animator = GetComponent<Animator>();
-        _animator.SetBool("IsWalking", false);
+        _AIAnimator.SetBool("IsWalking", false);
     }
 
     private void OnDisable()
@@ -39,7 +40,7 @@ public class AngelController : MonoBehaviour
 
     void Start()
     {
-        
+        _angelActions.Base.Attack.performed += _ => Attacking();
     }
 
     
@@ -47,11 +48,12 @@ public class AngelController : MonoBehaviour
     {
         direction = _angelActions.Base.Walk.ReadValue<Vector2>();
 
+
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             walkHorizontal = true;
             isWalking = true;
-            _animator.SetBool("IsWalking", true);
+            _AIAnimator.SetBool("IsWalking", true);
 
             if (direction.x > 0)
             {
@@ -67,7 +69,7 @@ public class AngelController : MonoBehaviour
         {
             walkHorizontal = false;
             isWalking = true;
-            _animator.SetBool("IsWalking", true);
+            _AIAnimator.SetBool("IsWalking", true);
 
             if(direction.y > 0)
             {
@@ -83,7 +85,7 @@ public class AngelController : MonoBehaviour
         if (Mathf.Abs(direction.y) == 0 && Mathf.Abs(direction.x) == 0)
         {
             isWalking = false;
-            _animator.SetBool("IsWalking", false);
+            _AIAnimator.SetBool("IsWalking", false);
         }
 
         _walk.direction = direction;
@@ -91,5 +93,10 @@ public class AngelController : MonoBehaviour
 
 
 
+    }
+
+    public void Attacking()
+    {
+        _AIAnimator.SetTrigger("IsAttacking");
     }
 }

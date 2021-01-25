@@ -24,9 +24,9 @@ public class Health : MonoBehaviour
 
     }
 
-    void LoseHealth()
+    void LoseHealth(int damage)
     {
-        hp -= 1;
+        hp -= damage;
         OnDamage.Invoke();
         if (hp == 0)
         {
