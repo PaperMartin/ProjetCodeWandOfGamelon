@@ -12,6 +12,11 @@ public class Walk : AbstractAIBehaviour
     private Rigidbody2D rb;
     public float speed;
 
+    [HideInInspector]
+    public Vector2 direction;
+    [HideInInspector]
+    public bool walkHorizontal;
+
     public override int GetBehaviourHash()
     {
         return Animator.StringToHash(behaviorHash);
@@ -45,15 +50,15 @@ public class Walk : AbstractAIBehaviour
     {
        if(active == true)
         {
-            if(_angelController.GetComponent<AngelController>().walkHorizontal == true)
+            if(walkHorizontal == true)
             {
-                float gaucheOuDroite = Mathf.Sign(_angelController.GetComponent<AngelController>().direction.x);
+                float gaucheOuDroite = Mathf.Sign(direction.x);
                 Vector2 vec = new Vector2(1, 0);
                 rb.velocity = gaucheOuDroite * vec * speed;
             }
             else
             {
-                float hautOuBas = Mathf.Sign(_angelController.GetComponent<AngelController>().direction.y);
+                float hautOuBas = Mathf.Sign(direction.y);
                 Vector2 vec = new Vector2(0, 1);
                 rb.velocity = hautOuBas * vec * speed;
             }

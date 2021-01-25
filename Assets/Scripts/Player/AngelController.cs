@@ -14,6 +14,8 @@ public class AngelController : MonoBehaviour
 
     private Animator _animator;
 
+    public Walk _walk;
+
     //"NESO" pour "Nord, Est, Sud, Ouest". Cette valeur sert d'indicateur pour savoir dans quel sens le personnage est tourné.
     [HideInInspector]
     public int NESOValue;
@@ -83,6 +85,9 @@ public class AngelController : MonoBehaviour
             isWalking = false;
             _animator.SetBool("IsWalking", false);
         }
+
+        _walk.direction = direction;
+        _walk.walkHorizontal = walkHorizontal;
 
 
 

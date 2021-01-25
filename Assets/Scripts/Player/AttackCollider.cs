@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackCollider : MonoBehaviour
 {
-    public List<GameObject> enemiesList;
+    public List<GameObject> enemiesList = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
