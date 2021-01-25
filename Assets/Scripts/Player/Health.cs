@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
 
     }
 
-    public void LoseHealth(int damage)
+    public void LoseHealth(GameObject culprit, int damage)
     {
         hp -= damage;
         OnDamage.Invoke();
