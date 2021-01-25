@@ -44,8 +44,8 @@ public class Stun : AbstractAIBehaviour
         IsActiveState = false;
     }
 
-    public void UpdateMoveDir()
+    public void UpdateMoveDir(Vector2 Direction)
     {
-
+        MoveDir = Direction;
     }
 }
