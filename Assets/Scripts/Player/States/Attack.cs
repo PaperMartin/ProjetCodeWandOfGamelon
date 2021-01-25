@@ -12,6 +12,12 @@ public class Attack : AbstractAIBehaviour
     public Animator _animator;
 
     public float attackDuration;
+    public int attackValue;
+
+    public AttackCollider haut;
+    public AttackCollider droite;
+    public AttackCollider bas;
+    public AttackCollider gauche;
 
     public override int GetBehaviourHash()
     {
@@ -48,5 +54,37 @@ public class Attack : AbstractAIBehaviour
     void Attacking()
     {
         int var = _angelController.GetComponent<AngelController>().NESOValue;
+
+        if(var == 0)
+        {
+            foreach (GameObject enemy in haut.enemiesList)
+            {
+                enemy.GetComponent<Health>().LoseHealth(attackValue);
+            }
+        }
+
+        if (var == 1)
+        {
+            foreach (GameObject enemy in droite.enemiesList)
+            {
+                enemy.GetComponent<Health>().LoseHealth(attackValue);
+            }
+        }
+
+        if (var == 2)
+        {
+            foreach (GameObject enemy in bas.enemiesList)
+            {
+                enemy.GetComponent<Health>().LoseHealth(attackValue);
+            }
+        }
+
+        if (var == 3)
+        {
+            foreach (GameObject enemy in gauche.enemiesList)
+            {
+                enemy.GetComponent<Health>().LoseHealth(attackValue);
+            }
+        }
     }
 }
