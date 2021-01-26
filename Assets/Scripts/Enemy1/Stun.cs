@@ -44,8 +44,8 @@ public class Stun : AbstractAIBehaviour
         IsActiveState = false;
     }
 
-    public void UpdateMoveDir(Vector2 Direction)
+    public void UpdateMoveDir(DamageInfo damage)
     {
-        MoveDir = Direction;
+        MoveDir = -(damage.Enemy.transform.position - transform.position).normalized;
     }
 }

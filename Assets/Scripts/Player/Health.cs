@@ -7,8 +7,8 @@ public class Health : MonoBehaviour
 {
     public int hp = 2;
 
-    public UnityEvent OnDamage;
-    public UnityEvent OnDeath;
+    public DamageEvent OnDamage;
+    public DamageEvent OnDeath;
 
     private bool selfSwitchA;
 
@@ -27,15 +27,23 @@ public class Health : MonoBehaviour
     public void LoseHealth(GameObject culprit, int damage)
     {
         hp -= damage;
-        OnDamage.Invoke();
+        DamageInfo damageInfo = new DamageInfo();
+        damageInfo.Damage = damage;
+        damageInfo.Enemy = culprit;
+        OnDamage.Invoke(damageInfo);
         if (hp == 0)
         {
-            Death();
+            Death(damageInfo);
         }
     }
 
-    void Death()
+    void Death(DamageInfo damage)
     {
-        OnDeath.Invoke();
+        OnDeath.Invoke(damage);
     }
+}
+
+[System.Serializable]
+public class DamageEvent : UnityEvent<DamageInfo>{
+
 }
