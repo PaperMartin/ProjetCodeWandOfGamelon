@@ -6,11 +6,18 @@ public class Attack : AbstractAIBehaviour
 {
     public string behaviorHash;
     private bool active = false;
-
-    public float attackTime;
-    private float attackTimeCounter;
-
+    
     public GameObject _angelController;
+
+    public Animator _animator;
+
+    public float attackDuration;
+    public int attackValue;
+
+    public AttackCollider haut;
+    public AttackCollider droite;
+    public AttackCollider bas;
+    public AttackCollider gauche;
 
     public override int GetBehaviourHash()
     {
@@ -37,11 +44,47 @@ public class Attack : AbstractAIBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        AnimatorStateInfo animatorStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+        if(animatorStateInfo.IsName("Attack") && animatorStateInfo.normalizedTime > attackDuration)
+        {
+            _animator.SetTrigger("EndState");
+        }
     }
 
     void Attacking()
     {
         int var = _angelController.GetComponent<AngelController>().NESOValue;
+
+        if(var == 0)
+        {
+            foreach (GameObject enemy in haut.enemiesList)
+            {
+                enemy.GetComponent<Health>().LoseHealth(this.gameObject, attackValue);
+            }
+        }
+
+        if (var == 1)
+        {
+            foreach (GameObject enemy in droite.enemiesList)
+            {
+                enemy.GetComponent<Health>().LoseHealth(this.gameObject, attackValue);
+            }
+        }
+
+        if (var == 2)
+        {
+            foreach (GameObject enemy in bas.enemiesList)
+            {
+                enemy.GetComponent<Health>().LoseHealth(this.gameObject, attackValue);
+            }
+        }
+
+        if (var == 3)
+        {
+            foreach (GameObject enemy in gauche.enemiesList)
+            {
+                enemy.GetComponent<Health>().LoseHealth(this.gameObject, attackValue);
+            }
+        }
     }
 }
