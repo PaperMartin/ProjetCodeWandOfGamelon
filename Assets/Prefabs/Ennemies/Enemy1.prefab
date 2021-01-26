@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 2383615763952969623}
   - component: {fileID: 120418321759873375}
   - component: {fileID: 839448221558229450}
+  - component: {fileID: 2429269248165476093}
   - component: {fileID: 4453894501534746705}
   m_Layer: 0
   m_Name: Enemy1
@@ -238,6 +239,7 @@ Transform:
   - {fileID: 395351072843816706}
   - {fileID: 1769342126452607787}
   - {fileID: 5745340081054084789}
+  - {fileID: 4999462251933469894}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -303,6 +305,18 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2429269248165476093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025287441247873998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82ddac0644cbc042876608aabc84da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &4453894501534746705
 Rigidbody2D:
   serializedVersion: 4
@@ -324,6 +338,69 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &8357324624351857132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4999462251933469894}
+  - component: {fileID: 2367225892942917622}
+  - component: {fileID: 1950867051652771495}
+  m_Layer: 0
+  m_Name: WalkTowardPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4999462251933469894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8357324624351857132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7472202053805287265}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2367225892942917622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8357324624351857132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6598a0fc8a64f4a96da97ca955ae5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviorHash: WalkTowardPlayer
+  _angelController: {fileID: 8025287441247873998}
+  speed: 0
+  direction: {x: 0, y: 0}
+  walkHorizontal: 0
+--- !u!114 &1950867051652771495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8357324624351857132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a65285285c7ed34e80bacba6b2b4ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walk: {fileID: 2367225892942917622}
+  pathfinder: {fileID: 2429269248165476093}
 --- !u!1 &8693904162271695545
 GameObject:
   m_ObjectHideFlags: 0
