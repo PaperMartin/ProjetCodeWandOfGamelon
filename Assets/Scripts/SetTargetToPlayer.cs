@@ -8,19 +8,36 @@ public class SetTargetToPlayer : MonoBehaviour
     private Walk walk;
     [SerializeField]
     private Pathfinder pathfinder;
+    [SerializeField]
     private Transform player;
+    [SerializeField]
+    private float CooldownBeforeRecalculation = 1f;
+
+    private float CurrentCooldown;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //player = GameObject.FindGameObjectWithTag("Player").transform;
+        CurrentCooldown = CooldownBeforeRecalculation;
     }
 
     // Update is called once per frame
     void Update()
     {
+        CurrentCooldown -= Time.deltaTime;
+        if (CurrentCooldown <= 0){
+            RecalculateDirection();
+            CurrentCooldown = CooldownBeforeRecalculation;
+        }
+    }
+
+    private void RecalculateDirection()
+    {
         Vector2 direction = (player.position - transform.position).normalized;
         bool walkHorizontal = false;
+        Vector2 DirectionFinal = Vector2.zero;
+
         if (Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
         {
             if (pathfinder.CanWalkLeft() || pathfinder.CanWalkRight())
@@ -28,7 +45,6 @@ public class SetTargetToPlayer : MonoBehaviour
                 walkHorizontal = true;
             }
         }
-        Vector2 DirectionFinal = Vector2.zero;
 
         if (walkHorizontal == true)
         {
@@ -52,5 +68,8 @@ public class SetTargetToPlayer : MonoBehaviour
                 DirectionFinal.y = -1;
             }
         }
+
+        walk.direction = DirectionFinal;
+        walk.walkHorizontal = walkHorizontal;
     }
 }

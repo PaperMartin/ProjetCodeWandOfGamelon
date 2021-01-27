@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1108195797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1108195798}
+  - component: {fileID: 1108195799}
+  m_Layer: 0
+  m_Name: Idle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1108195798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108195797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7472202053805287265}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1108195799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108195797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6598a0fc8a64f4a96da97ca955ae5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviorHash: Idle
+  _angelController: {fileID: 8025287441247873998}
+  speed: 0
+  direction: {x: 0, y: 0}
+  walkHorizontal: 0
 --- !u!1 &1657346178236981755
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +92,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   behaviorHash: GoBackToSpawnPos
+--- !u!1 &2598552581850579173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6811607477716205081}
+  - component: {fileID: 122139366022930976}
+  - component: {fileID: 6305211746585426866}
+  m_Layer: 0
+  m_Name: WalkRandom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6811607477716205081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598552581850579173}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7472202053805287265}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &122139366022930976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598552581850579173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6598a0fc8a64f4a96da97ca955ae5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviorHash: WalkRandom
+  _angelController: {fileID: 8025287441247873998}
+  speed: 1
+  direction: {x: 0, y: 0}
+  walkHorizontal: 0
+--- !u!114 &6305211746585426866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598552581850579173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b30474352694f04d895059483fe4a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walk: {fileID: 122139366022930976}
+  pathfinder: {fileID: 2429269248165476093}
+  DirectionChangeCooldown: 1
+  CurrentCooldown: 0
 --- !u!1 &3685352023675619453
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +353,8 @@ Transform:
   - {fileID: 1769342126452607787}
   - {fileID: 5745340081054084789}
   - {fileID: 4999462251933469894}
+  - {fileID: 6811607477716205081}
+  - {fileID: 1108195798}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -384,7 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorHash: WalkTowardPlayer
   _angelController: {fileID: 8025287441247873998}
-  speed: 0
+  speed: 1
   direction: {x: 0, y: 0}
   walkHorizontal: 0
 --- !u!114 &1950867051652771495
@@ -401,6 +516,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walk: {fileID: 2367225892942917622}
   pathfinder: {fileID: 2429269248165476093}
+  player: {fileID: 0}
+  CooldownBeforeRecalculation: 1
 --- !u!1 &8693904162271695545
 GameObject:
   m_ObjectHideFlags: 0
