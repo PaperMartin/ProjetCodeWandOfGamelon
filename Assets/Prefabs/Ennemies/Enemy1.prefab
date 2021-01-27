@@ -156,7 +156,6 @@ MonoBehaviour:
   walk: {fileID: 122139366022930976}
   pathfinder: {fileID: 2429269248165476093}
   DirectionChangeCooldown: 1
-  CurrentCooldown: 0
 --- !u!1 &3685352023675619453
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +329,7 @@ GameObject:
   - component: {fileID: 839448221558229450}
   - component: {fileID: 2429269248165476093}
   - component: {fileID: 4453894501534746705}
+  - component: {fileID: 1892814711}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -453,6 +453,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1892814711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025287441247873998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77652e91ccff5e64085683bccb6bb7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1
 --- !u!1 &8357324624351857132
 GameObject:
   m_ObjectHideFlags: 0

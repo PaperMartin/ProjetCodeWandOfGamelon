@@ -8,7 +8,7 @@ public class SetTargetToPlayer : MonoBehaviour
     private Walk walk;
     [SerializeField]
     private Pathfinder pathfinder;
-    [SerializeField]
+
     private Transform player;
     [SerializeField]
     private float CooldownBeforeRecalculation = 1f;
@@ -18,7 +18,7 @@ public class SetTargetToPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         CurrentCooldown = CooldownBeforeRecalculation;
     }
 
@@ -26,7 +26,8 @@ public class SetTargetToPlayer : MonoBehaviour
     void Update()
     {
         CurrentCooldown -= Time.deltaTime;
-        if (CurrentCooldown <= 0){
+        if (CurrentCooldown <= 0)
+        {
             RecalculateDirection();
             CurrentCooldown = CooldownBeforeRecalculation;
         }

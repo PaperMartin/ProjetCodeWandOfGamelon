@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class DamagePlayerOnTouch : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField]
+    private int Damage = 1;
+
+    Health ownHealth;
+
+    private void Start() {
+        ownHealth = GetComponent<Health>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void OnCollisionEnter(Collision other) {
+        if (other.rigidbody.tag == "Player"){
+            Health playerHealth = other.rigidbody.GetComponent<Health>();
+            ownHealth.LoseHealth(other.rigidbody.transform.gameObject,0);
+            playerHealth.LoseHealth(gameObject,Damage);
+        }
     }
 }
