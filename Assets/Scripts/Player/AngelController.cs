@@ -12,7 +12,7 @@ public class AngelController : MonoBehaviour
     public bool walkHorizontal;
     public bool isWalking;
 
-    private Animator _animator;
+    public Animator _AnimAnimator;
     public Animator _AIAnimator;
 
     public Walk _walk;
@@ -24,7 +24,6 @@ public class AngelController : MonoBehaviour
     private void Awake()
     {
         _angelActions = new AngelActions();
-        _animator = GetComponent<Animator>();
         _AIAnimator.SetBool("IsWalking", false);
     }
 
@@ -54,14 +53,19 @@ public class AngelController : MonoBehaviour
             walkHorizontal = true;
             isWalking = true;
             _AIAnimator.SetBool("IsWalking", true);
+            _AnimAnimator.SetBool("IsWalking", true);
 
             if (direction.x > 0)
             {
                 NESOValue = 1;
+                _AnimAnimator.SetFloat("DirY", 0f);
+                _AnimAnimator.SetFloat("DirX", 1f);
             }
             else
             {
                 NESOValue = 3;
+                _AnimAnimator.SetFloat("DirY", 0f);
+                _AnimAnimator.SetFloat("DirX", -1f);
             }
         }
 
@@ -70,14 +74,19 @@ public class AngelController : MonoBehaviour
             walkHorizontal = false;
             isWalking = true;
             _AIAnimator.SetBool("IsWalking", true);
+            _AnimAnimator.SetBool("IsWalking", true);
 
-            if(direction.y > 0)
+            if (direction.y > 0)
             {
                 NESOValue = 0;
+                _AnimAnimator.SetFloat("DirY", 1f);
+                _AnimAnimator.SetFloat("DirX", 0f);
             }
             else
             {
                 NESOValue = 2;
+                _AnimAnimator.SetFloat("DirY", -1f);
+                _AnimAnimator.SetFloat("DirX", 0f);
             }
 
         }
@@ -86,6 +95,7 @@ public class AngelController : MonoBehaviour
         {
             isWalking = false;
             _AIAnimator.SetBool("IsWalking", false);
+            _AnimAnimator.SetBool("IsWalking", false);
         }
 
         _walk.direction = direction;
@@ -98,5 +108,10 @@ public class AngelController : MonoBehaviour
     public void Attacking()
     {
         _AIAnimator.SetTrigger("IsAttacking");
+    }
+
+    public void KillPlease()
+    {
+        _AIAnimator.SetBool("IsAlive", false);
     }
 }
