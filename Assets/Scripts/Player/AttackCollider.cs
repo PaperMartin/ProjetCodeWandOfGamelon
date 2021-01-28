@@ -20,17 +20,17 @@ public class AttackCollider : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.attachedRigidbody.tag == "Enemy")
         {
-            enemiesList.Add(collision.gameObject);
+            enemiesList.Add(collision.attachedRigidbody.gameObject);
         }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy")
+        if(collision.attachedRigidbody.tag == "Enemy")
         {
-            enemiesList.Remove(collision.gameObject);
+            enemiesList.Remove(collision.attachedRigidbody.gameObject);
         }
     }
     
