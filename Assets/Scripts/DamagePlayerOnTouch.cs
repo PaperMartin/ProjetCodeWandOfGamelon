@@ -13,10 +13,10 @@ public class DamagePlayerOnTouch : MonoBehaviour
         ownHealth = GetComponent<Health>();
     }
 
-    private void OnCollisionEnter(Collision other) {
-        if (other.rigidbody.tag == "Player"){
-            Health playerHealth = other.rigidbody.GetComponent<Health>();
-            ownHealth.LoseHealth(other.rigidbody.transform.gameObject,0);
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.collider.tag == "Player"){
+            Health playerHealth = other.collider.GetComponent<Health>();
+            ownHealth.LoseHealth(other.collider.transform.gameObject,0);
             playerHealth.LoseHealth(gameObject,Damage);
         }
     }
