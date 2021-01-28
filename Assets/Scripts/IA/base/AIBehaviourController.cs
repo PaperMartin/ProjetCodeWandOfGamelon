@@ -35,6 +35,7 @@ public class AIBehaviourController : MonoBehaviour
         if (currentBehaviour)
         {
             currentBehaviour.enabled = false;
+            currentBehaviour.ExitStateEvent.Invoke();
             currentBehaviour.onExitState();
         }
             
@@ -43,6 +44,7 @@ public class AIBehaviourController : MonoBehaviour
             // Start the new behaviour.
             currentBehaviour = behaviours[behaviorHash];
             currentBehaviour.enabled = true;
+            currentBehaviour.EnterStateEvent.Invoke();
             currentBehaviour.onEnterState();
         }
         catch (KeyNotFoundException)

@@ -15,8 +15,8 @@ public class DamagePlayerOnTouch : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.collider.tag == "Player"){
-            Health playerHealth = other.collider.GetComponent<Health>();
-            ownHealth.LoseHealth(other.collider.transform.gameObject,0);
+            Health playerHealth = other.rigidbody.GetComponent<Health>();
+            ownHealth.LoseHealth(other.rigidbody.gameObject,0);
             playerHealth.LoseHealth(gameObject,Damage);
         }
     }
