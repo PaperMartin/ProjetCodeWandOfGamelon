@@ -41,6 +41,7 @@ public class Stun : AbstractAIBehaviour
 
     public override void onExitState()
     {
+        rbody2D.velocity = Vector2.zero;
         IsActiveState = false;
     }
 
