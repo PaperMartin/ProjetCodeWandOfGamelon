@@ -19,3 +19,7 @@ MonoBehaviour:
     RightOpen: 1
   Rooms:
   - {fileID: 11400000, guid: 02ee073e440ff5b49ade7e7436150c0b, type: 2}
+  - {fileID: 11400000, guid: a49b637eced9cdb4695b3c08fbf7f00a, type: 2}
+  - {fileID: 11400000, guid: 602d820b60eb26a46aadf8736fa9e79d, type: 2}
+  - {fileID: 11400000, guid: cc701b44d22c64642b113b08313b7997, type: 2}
+  - {fileID: 11400000, guid: 333a9b03f91720a43a2e722a3db74704, type: 2}

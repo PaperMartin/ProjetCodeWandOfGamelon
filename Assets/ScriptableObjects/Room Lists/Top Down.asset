@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52a037c8a99fc8e41a20f3136ec68000, type: 3}
-  m_Name: Down Right
+  m_Name: Top Down
   m_EditorClassIdentifier: 
   config:
-    TopOpen: 0
+    TopOpen: 1
     BottomOpen: 1
     LeftOpen: 0
-    RightOpen: 1
+    RightOpen: 0
   Rooms:
-  - {fileID: 11400000, guid: 898a857bccfe7e04db0522a8501e9382, type: 2}
-  - {fileID: 11400000, guid: 80b994edbcb73694986bbfc0aa526e89, type: 2}
-  - {fileID: 11400000, guid: 70fd4ca503df7a2499ce1b34940f13ce, type: 2}
-  - {fileID: 11400000, guid: 8f3c985be20c85e4b91d0bc7c105efbc, type: 2}
-  - {fileID: 11400000, guid: 98bdf991f3114a442ad5682d23d38096, type: 2}
+  - {fileID: 11400000, guid: 8a83626ab4971254284d11c1d5b0c80b, type: 2}
+  - {fileID: 11400000, guid: d7512bc24eb13ce4fbbecf580c47d14c, type: 2}
+  - {fileID: 11400000, guid: 0d055df889b5f744c9e46b509ccd1c8b, type: 2}
+  - {fileID: 11400000, guid: e948ce00fda9b324d81df4cb61da19d2, type: 2}
+  - {fileID: 11400000, guid: 1b994b26f5b6deb48bd42eb2da761c12, type: 2}
