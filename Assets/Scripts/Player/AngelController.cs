@@ -22,6 +22,9 @@ public class AngelController : MonoBehaviour
 
     public AudioClip gameOverSound;
     private AudioSource source;
+    public AudioSource SESource;
+    public AudioClip hitSound;
+    public AudioClip attackSound;
 
     private Rigidbody2D rb;
 
@@ -121,7 +124,10 @@ public class AngelController : MonoBehaviour
     {
         _AIAnimator.SetTrigger("IsAttacking");
 
-        if(NESOValue == 0)
+        SESource.clip = attackSound;
+        SESource.Play();
+
+        if (NESOValue == 0)
         {
             upAttack.SetTrigger("IsAttacking");
         }
@@ -149,5 +155,11 @@ public class AngelController : MonoBehaviour
         source.Play();
         source.loop = false;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+    public void IsBeingHit()
+    {
+        SESource.clip = hitSound;
+        SESource.Play();
     }
 }
