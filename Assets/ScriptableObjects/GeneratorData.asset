@@ -18,3 +18,11 @@ MonoBehaviour:
   - {fileID: 0}
   MapSize: {x: 5, y: 5}
   RoomSize: {x: 20, y: 12}
+  StartRoomTop: {fileID: 11400000, guid: c0d1603ef0fb20c42b0d3d4551f7c07a, type: 2}
+  StartRoomBottom: {fileID: 11400000, guid: f8879c343e1443c4398db343318bcf8c, type: 2}
+  StartRoomLeft: {fileID: 0}
+  StartRoomRight: {fileID: 0}
+  EndRoomTop: {fileID: 11400000, guid: 56c938043e6d56845b1e8f7d30cd5491, type: 2}
+  EndRoomBottom: {fileID: 0}
+  EndRoomLeft: {fileID: 0}
+  EndRoomRight: {fileID: 0}
