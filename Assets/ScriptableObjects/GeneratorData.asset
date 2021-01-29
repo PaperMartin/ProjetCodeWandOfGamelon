@@ -17,4 +17,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   MapSize: {x: 5, y: 5}
-  RoomSize: {x: 0, y: 0}
+  RoomSize: {x: 20, y: 12}
