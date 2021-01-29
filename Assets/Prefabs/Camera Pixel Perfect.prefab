@@ -103,7 +103,7 @@ MonoBehaviour:
   m_PixelSnapping: 0
   m_CropFrameX: 1
   m_CropFrameY: 1
-  m_StretchFill: 1
+  m_StretchFill: 0
 --- !u!1 &5304940838990150053
 GameObject:
   m_ObjectHideFlags: 0
