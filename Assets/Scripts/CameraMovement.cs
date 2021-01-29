@@ -20,6 +20,7 @@ public class CameraMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.position = targetPlayer.position;
         UpdatePosition();
         lastPositionX = posX;
         lastPositionY = posY;
@@ -46,9 +47,9 @@ public class CameraMovement : MonoBehaviour
     void UpdatePosition()
     {
         posX = targetPlayer.position;
-        posX.x = Mathf.FloorToInt(posX.x / largeur);
+        posX.x = Mathf.FloorToInt((posX.x + (largeur/2)) / largeur);
 
         posY = targetPlayer.position;
-        posY.y = Mathf.FloorToInt(posY.y / hauteur);
+        posY.y = Mathf.FloorToInt((posY.y + (largeur/2)) / hauteur);
     }
 }
