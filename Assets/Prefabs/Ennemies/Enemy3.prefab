@@ -10,12 +10,12 @@ PrefabInstance:
     - target: {fileID: 71869308, guid: b283aec9bcee474448f9fc44684c4cd6, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6995121543064541362, guid: e45f4960aae715149a42b0c45bb31657,
+      objectReference: {fileID: -1670007436340126250, guid: 9cf87a2ba694b0e408d12a944127ab30,
         type: 3}
     - target: {fileID: 839448221558229450, guid: b283aec9bcee474448f9fc44684c4cd6,
         type: 3}
       propertyPath: hp
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7472202053805287265, guid: b283aec9bcee474448f9fc44684c4cd6,
         type: 3}
@@ -75,13 +75,13 @@ PrefabInstance:
     - target: {fileID: 8025287441247873998, guid: b283aec9bcee474448f9fc44684c4cd6,
         type: 3}
       propertyPath: m_Name
-      value: Enemy2
+      value: Enemy3
       objectReference: {fileID: 0}
     - target: {fileID: 8566623324865389009, guid: b283aec9bcee474448f9fc44684c4cd6,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 3c1ff948d410ee34a87636561e3437b2,
+      objectReference: {fileID: 22100000, guid: ce9169300d69c654398a4c487a0ed8c3,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b283aec9bcee474448f9fc44684c4cd6, type: 3}
