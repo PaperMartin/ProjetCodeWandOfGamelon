@@ -9,7 +9,7 @@ public class MapGenerator : MonoBehaviour
 
     private List<Vector2Int> Directions = new List<Vector2Int>();
 
-    private void Start()
+    private void Awake()
     {
         GenerateMap();
     }
@@ -218,7 +218,6 @@ public class MapGenerator : MonoBehaviour
             }
         }
     }
-
 
     private void ShuffleDirections()
     {

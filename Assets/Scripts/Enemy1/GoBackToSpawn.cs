@@ -6,12 +6,15 @@ public class GoBackToSpawn : AbstractAIBehaviour
 {
     public string behaviorHash;
     
+    [SerializeField]
     private Vector2 Spawn;
+    [SerializeField]
+    private Transform body;
 
     // Start is called before the first frame update
     void Start()
     {
-        Spawn = transform.position;
+        Spawn = body.position;
     }
 
     public override int GetBehaviourHash()
@@ -21,7 +24,7 @@ public class GoBackToSpawn : AbstractAIBehaviour
 
     public override void onEnterState()
     {
-        transform.position = Spawn;
+        body.position = Spawn;
     }
 
     public override void onExitState()
