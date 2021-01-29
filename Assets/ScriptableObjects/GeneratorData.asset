@@ -27,6 +27,6 @@ MonoBehaviour:
   StartRoomLeft: {fileID: 11400000, guid: 02c0adffb94db3c49a48ba77eb141dcc, type: 2}
   StartRoomRight: {fileID: 11400000, guid: 5c30beaeaa75e5a418ee794b5f263bf0, type: 2}
   EndRoomTop: {fileID: 11400000, guid: 56c938043e6d56845b1e8f7d30cd5491, type: 2}
-  EndRoomBottom: {fileID: 0}
-  EndRoomLeft: {fileID: 0}
-  EndRoomRight: {fileID: 0}
+  EndRoomBottom: {fileID: 11400000, guid: cd8014efc026bfb449d0bb010ac8c8c2, type: 2}
+  EndRoomLeft: {fileID: 11400000, guid: 331534e639eb42c46ae4a6ef1584b055, type: 2}
+  EndRoomRight: {fileID: 11400000, guid: 1a8b0e115d2840249894b90642835ccc, type: 2}
