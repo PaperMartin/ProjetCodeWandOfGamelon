@@ -19,13 +19,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 96467f57538e6f7408f3e4cb7ee14f2e, type: 2}
   - {fileID: 11400000, guid: 755619b426404644abbd308346f230ed, type: 2}
   - {fileID: 11400000, guid: 075eda2587d58f54796a5d48b310ce52, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 6c2dfb7931376904986d8fdcde40ab2a, type: 2}
   MapSize: {x: 5, y: 5}
   RoomSize: {x: 20, y: 12}
   StartRoomTop: {fileID: 11400000, guid: c0d1603ef0fb20c42b0d3d4551f7c07a, type: 2}
   StartRoomBottom: {fileID: 11400000, guid: f8879c343e1443c4398db343318bcf8c, type: 2}
-  StartRoomLeft: {fileID: 0}
-  StartRoomRight: {fileID: 0}
+  StartRoomLeft: {fileID: 11400000, guid: 02c0adffb94db3c49a48ba77eb141dcc, type: 2}
+  StartRoomRight: {fileID: 11400000, guid: 5c30beaeaa75e5a418ee794b5f263bf0, type: 2}
   EndRoomTop: {fileID: 11400000, guid: 56c938043e6d56845b1e8f7d30cd5491, type: 2}
   EndRoomBottom: {fileID: 0}
   EndRoomLeft: {fileID: 0}
