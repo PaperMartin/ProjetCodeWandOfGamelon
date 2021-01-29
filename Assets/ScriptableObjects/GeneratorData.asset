@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DungeonLength: 10
   RoomLists:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c638477aa74be3a44a4f62fa21c1906d, type: 2}
   - {fileID: 0}
   MapSize: {x: 5, y: 5}
   RoomSize: {x: 20, y: 12}
