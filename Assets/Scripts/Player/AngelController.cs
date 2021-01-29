@@ -15,6 +15,11 @@ public class AngelController : MonoBehaviour
     public Animator _AnimAnimator;
     public Animator _AIAnimator;
 
+    public Animator upAttack;
+    public Animator rightAttack;
+    public Animator downAttack;
+    public Animator leftAttack;
+
     public Walk _walk;
 
     //"NESO" pour "Nord, Est, Sud, Ouest". Cette valeur sert d'indicateur pour savoir dans quel sens le personnage est tourné.
@@ -108,6 +113,26 @@ public class AngelController : MonoBehaviour
     public void Attacking()
     {
         _AIAnimator.SetTrigger("IsAttacking");
+
+        if(NESOValue == 0)
+        {
+            upAttack.SetTrigger("IsAttacking");
+        }
+
+        if (NESOValue == 1)
+        {
+            rightAttack.SetTrigger("IsAttacking");
+        }
+
+        if (NESOValue == 2)
+        {
+            downAttack.SetTrigger("IsAttacking");
+        }
+
+        if (NESOValue == 3)
+        {
+            leftAttack.SetTrigger("IsAttacking");
+        }
     }
 
     public void KillPlease()
