@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52a037c8a99fc8e41a20f3136ec68000, type: 3}
-  m_Name: TopBottomRooms
+  m_Script: {fileID: 11500000, guid: 4f8b68129b9104e42aa7fc2a49fec42c, type: 3}
+  m_Name: StartLeft
   m_EditorClassIdentifier: 
-  config:
-    TopOpen: 1
-    BottomOpen: 1
-    LeftOpen: 0
-    RightOpen: 0
-  Rooms:
-  - {fileID: 11400000, guid: 8a83626ab4971254284d11c1d5b0c80b, type: 2}
+  RoomPrefab: {fileID: 1852118406691315887, guid: 72e6b8601d5d95b449035236267a52b8,
+    type: 3}
