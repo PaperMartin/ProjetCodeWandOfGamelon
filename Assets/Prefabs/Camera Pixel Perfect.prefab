@@ -114,7 +114,6 @@ GameObject:
   m_Component:
   - component: {fileID: 821646894365591706}
   - component: {fileID: 1803218041864454236}
-  - component: {fileID: 1482216392085065916}
   m_Layer: 0
   m_Name: Camera Pixel Perfect
   m_TagString: Untagged
@@ -153,11 +152,3 @@ MonoBehaviour:
   largeur: 0
   hauteur: 0
   travelDuration: 0
---- !u!81 &1482216392085065916
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5304940838990150053}
-  m_Enabled: 1
