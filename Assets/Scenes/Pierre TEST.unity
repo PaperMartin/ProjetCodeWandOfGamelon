@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c159b6a6dc5c2e46b58829f7aacd60d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
+  hp: 3
   OnDamage:
     m_PersistentCalls:
       m_Calls:

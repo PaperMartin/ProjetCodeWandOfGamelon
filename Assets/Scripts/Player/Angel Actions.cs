@@ -33,6 +33,14 @@ public class @AngelActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""MenuAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""d259aa0e-07c6-4220-9617-56dd0ae8587a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -156,6 +164,17 @@ public class @AngelActions : IInputActionCollection, IDisposable
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""82ec43da-c932-452c-ab7d-413412461586"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MenuAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -166,6 +185,7 @@ public class @AngelActions : IInputActionCollection, IDisposable
         m_Base = asset.FindActionMap("Base", throwIfNotFound: true);
         m_Base_Walk = m_Base.FindAction("Walk", throwIfNotFound: true);
         m_Base_Attack = m_Base.FindAction("Attack", throwIfNotFound: true);
+        m_Base_MenuAction = m_Base.FindAction("MenuAction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -217,12 +237,14 @@ public class @AngelActions : IInputActionCollection, IDisposable
     private IBaseActions m_BaseActionsCallbackInterface;
     private readonly InputAction m_Base_Walk;
     private readonly InputAction m_Base_Attack;
+    private readonly InputAction m_Base_MenuAction;
     public struct BaseActions
     {
         private @AngelActions m_Wrapper;
         public BaseActions(@AngelActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Walk => m_Wrapper.m_Base_Walk;
         public InputAction @Attack => m_Wrapper.m_Base_Attack;
+        public InputAction @MenuAction => m_Wrapper.m_Base_MenuAction;
         public InputActionMap Get() { return m_Wrapper.m_Base; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -238,6 +260,9 @@ public class @AngelActions : IInputActionCollection, IDisposable
                 @Attack.started -= m_Wrapper.m_BaseActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_BaseActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_BaseActionsCallbackInterface.OnAttack;
+                @MenuAction.started -= m_Wrapper.m_BaseActionsCallbackInterface.OnMenuAction;
+                @MenuAction.performed -= m_Wrapper.m_BaseActionsCallbackInterface.OnMenuAction;
+                @MenuAction.canceled -= m_Wrapper.m_BaseActionsCallbackInterface.OnMenuAction;
             }
             m_Wrapper.m_BaseActionsCallbackInterface = instance;
             if (instance != null)
@@ -248,6 +273,9 @@ public class @AngelActions : IInputActionCollection, IDisposable
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
+                @MenuAction.started += instance.OnMenuAction;
+                @MenuAction.performed += instance.OnMenuAction;
+                @MenuAction.canceled += instance.OnMenuAction;
             }
         }
     }
@@ -256,5 +284,6 @@ public class @AngelActions : IInputActionCollection, IDisposable
     {
         void OnWalk(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnMenuAction(InputAction.CallbackContext context);
     }
 }
