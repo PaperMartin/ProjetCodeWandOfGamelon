@@ -625,7 +625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2383615763952969623}
   RoomWidth: 20
-  RoomLength: 11
+  RoomLength: 12
 --- !u!1 &8357324624351857132
 GameObject:
   m_ObjectHideFlags: 0
