@@ -22,15 +22,24 @@ public class AttackCollider : MonoBehaviour
     {
         if (collision.attachedRigidbody.tag == "Enemy")
         {
-            enemiesList.Add(collision.attachedRigidbody.gameObject);
+            
+            if (collision.gameObject != null)
+            {
+                enemiesList.Add(collision.attachedRigidbody.gameObject);
+            }
+
         }
+        
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.attachedRigidbody.tag == "Enemy")
         {
-            enemiesList.Remove(collision.attachedRigidbody.gameObject);
+            if (collision.gameObject != null)
+            {
+                enemiesList.Remove(collision.attachedRigidbody.gameObject);
+            }
         }
     }
     

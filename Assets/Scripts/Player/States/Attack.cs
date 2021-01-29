@@ -59,7 +59,10 @@ public class Attack : AbstractAIBehaviour
         {
             foreach (GameObject enemy in haut.enemiesList)
             {
-                enemy.GetComponent<Health>().LoseHealth(this.gameObject, attackValue);
+                if(enemy != null)
+                {
+                    enemy.GetComponent<Health>().LoseHealth(this.gameObject, attackValue);
+                }
             }
         }
 
@@ -67,7 +70,10 @@ public class Attack : AbstractAIBehaviour
         {
             foreach (GameObject enemy in droite.enemiesList)
             {
-                enemy.GetComponent<Health>().LoseHealth(this.gameObject, attackValue);
+                if (enemy != null)
+                {
+                    enemy.GetComponent<Health>().LoseHealth(this.gameObject, attackValue);
+                }
             }
         }
 
@@ -75,7 +81,10 @@ public class Attack : AbstractAIBehaviour
         {
             foreach (GameObject enemy in bas.enemiesList)
             {
-                enemy.GetComponent<Health>().LoseHealth(this.gameObject, attackValue);
+                if (enemy != null)
+                {
+                    enemy.GetComponent<Health>().LoseHealth(this.gameObject, attackValue);
+                }
             }
         }
 
@@ -83,7 +92,10 @@ public class Attack : AbstractAIBehaviour
         {
             foreach (GameObject enemy in gauche.enemiesList)
             {
-                enemy.GetComponent<Health>().LoseHealth(this.gameObject, attackValue);
+                if (enemy != null)
+                {
+                    enemy.GetComponent<Health>().LoseHealth(this.gameObject, attackValue);
+                }
             }
         }
     }
