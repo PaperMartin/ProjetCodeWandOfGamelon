@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dead : AbstractAIBehaviour
 {
@@ -46,7 +47,7 @@ public class Dead : AbstractAIBehaviour
 
             if (gameOverTimeCounter < 0)
             {
-                Debug.Log("Endgame.");
+                SceneManager.LoadScene("Accueil");
             }
 
 
