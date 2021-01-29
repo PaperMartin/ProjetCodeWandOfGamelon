@@ -20,6 +20,11 @@ public class AngelController : MonoBehaviour
     public Animator downAttack;
     public Animator leftAttack;
 
+    public AudioClip gameOverSound;
+    private AudioSource source;
+
+    private Rigidbody2D rb;
+
     public Walk _walk;
 
     //"NESO" pour "Nord, Est, Sud, Ouest". Cette valeur sert d'indicateur pour savoir dans quel sens le personnage est tourné.
@@ -30,6 +35,8 @@ public class AngelController : MonoBehaviour
     {
         _angelActions = new AngelActions();
         _AIAnimator.SetBool("IsWalking", false);
+        source = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnDisable()
@@ -138,5 +145,9 @@ public class AngelController : MonoBehaviour
     public void KillPlease()
     {
         _AIAnimator.SetBool("IsAlive", false);
+        source.clip = gameOverSound;
+        source.Play();
+        source.loop = false;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 }
