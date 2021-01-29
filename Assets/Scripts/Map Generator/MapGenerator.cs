@@ -6,6 +6,8 @@ public class MapGenerator : MonoBehaviour
 {
     [SerializeField]
     private GeneratorData data;
+    [SerializeField]
+    private Transform Player;
 
     private List<Vector2Int> Directions = new List<Vector2Int>();
 
@@ -32,6 +34,7 @@ public class MapGenerator : MonoBehaviour
             MapRoom CurrentRoom = roomlist[i];
             mapRoom[CurrentPos.x, CurrentPos.y] = CurrentRoom;
         }
+        MovePlayerToSpawn(RoomPositions[0]);
 
     }
 
@@ -110,7 +113,13 @@ public class MapGenerator : MonoBehaviour
 
         foreach (DoorConfiguration config in doorconfig)
         {
-            rooms.Add(data.PullRandomRoom(config));
+            if (doorconfig.IndexOf(config) == 0){
+                rooms.Add(data.PullStartRoom(config));
+            }
+            else if (doorconfig.IndexOf(config) == doorconfig.Count -1){
+                rooms.Add(data.PullEndRoom(config));
+            }
+            else rooms.Add(data.PullRandomRoom(config));
         }
 
         return rooms;
@@ -217,6 +226,13 @@ public class MapGenerator : MonoBehaviour
 
             }
         }
+    }
+
+    private void MovePlayerToSpawn(Vector2 spawnRoom){
+        Vector2 SpawnPos = Vector2.zero;
+        SpawnPos.x = spawnRoom.x * data.GetRoomSize().x; 
+        SpawnPos.y = spawnRoom.y * data.GetRoomSize().y;
+        Player.position = SpawnPos;
     }
 
     private void ShuffleDirections()
