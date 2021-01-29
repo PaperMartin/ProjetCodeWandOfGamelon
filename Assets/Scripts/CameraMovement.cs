@@ -50,6 +50,6 @@ public class CameraMovement : MonoBehaviour
         posX.x = Mathf.FloorToInt((posX.x + (largeur/2)) / largeur);
 
         posY = targetPlayer.position;
-        posY.y = Mathf.FloorToInt((posY.y + (largeur/2)) / hauteur);
+        posY.y = Mathf.FloorToInt((posY.y + (hauteur/2)) / hauteur);
     }
 }
