@@ -113,16 +113,17 @@ public class MapGenerator : MonoBehaviour
     private List<MapRoom> GenerateRoomList(List<DoorConfiguration> doorconfig)
     {
         List<MapRoom> rooms = new List<MapRoom>();
-
+        int index = 0;
         foreach (DoorConfiguration config in doorconfig)
         {
-            if (doorconfig.IndexOf(config) == 0){
+            if (index == 0){
                 rooms.Add(data.PullStartRoom(config));
             }
-            else if (doorconfig.IndexOf(config) == doorconfig.Count -1){
+            else if (index == doorconfig.Count -1){
                 rooms.Add(data.PullEndRoom(config));
             }
             else rooms.Add(data.PullRandomRoom(config));
+            index += 1;
         }
 
         return rooms;

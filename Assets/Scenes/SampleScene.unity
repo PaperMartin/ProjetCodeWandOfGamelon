@@ -908,11 +908,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6338864722870323667, guid: c0db43296f854a144861757c76783f19,
-        type: 3}
-      propertyPath: speed
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0db43296f854a144861757c76783f19, type: 3}
 --- !u!4 &690384003 stripped
@@ -1127,11 +1122,6 @@ PrefabInstance:
       propertyPath: targetPlayer
       value: 
       objectReference: {fileID: 690384003}
-    - target: {fileID: 2210316977969376816, guid: fac84755f31e68f43b2adaa5e105447e,
-        type: 3}
-      propertyPath: m_StretchFill
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5304940838990150053, guid: fac84755f31e68f43b2adaa5e105447e,
         type: 3}
       propertyPath: m_Name
