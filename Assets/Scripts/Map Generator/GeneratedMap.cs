@@ -19,6 +19,7 @@ public class GeneratedMap
 
     public void SetMap(MapRoom[,] NewMap){
         map = NewMap;
+        MapSize = new Vector2Int(NewMap.GetLength(0),NewMap.GetLength(1));
     }
 
     public void SetRoomSize(Vector2 RoomSize){

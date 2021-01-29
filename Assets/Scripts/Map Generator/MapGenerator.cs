@@ -31,9 +31,12 @@ public class MapGenerator : MonoBehaviour
         for (int i = 0; i < RoomPositions.Count; i++)
         {
             Vector2Int CurrentPos = RoomPositions[i];
+            Debug.Log(CurrentPos);
             MapRoom CurrentRoom = roomlist[i];
             mapRoom[CurrentPos.x, CurrentPos.y] = CurrentRoom;
         }
+        InstantiateMap(generatedMap);
+
         MovePlayerToSpawn(RoomPositions[0]);
 
     }
