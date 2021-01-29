@@ -24,7 +24,7 @@ public class MapGenerator : MonoBehaviour
         generatedMap.SetMap(mapRoom);
 
         List<Vector2Int> RoomPositions = GeneratePath(data.GetMapSize());
-        TempSpawnPath(RoomPositions);
+        //TempSpawnPath(RoomPositions);
         List<DoorConfiguration> doorconfig = GenerateDoorConfig(RoomPositions);
         List<MapRoom> roomlist = GenerateRoomList(doorconfig);
 
