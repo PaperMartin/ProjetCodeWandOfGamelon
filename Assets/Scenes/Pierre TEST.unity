@@ -1878,6 +1878,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2210316977969376816, guid: fac84755f31e68f43b2adaa5e105447e,
+        type: 3}
+      propertyPath: m_UpscaleRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210316977969376816, guid: fac84755f31e68f43b2adaa5e105447e,
+        type: 3}
+      propertyPath: m_PixelSnapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210316977969376817, guid: fac84755f31e68f43b2adaa5e105447e,
+        type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5304940838990150053, guid: fac84755f31e68f43b2adaa5e105447e,
         type: 3}
       propertyPath: m_Name
