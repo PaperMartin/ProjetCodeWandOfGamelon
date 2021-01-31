@@ -16,17 +16,17 @@ Le fun du projet est d'explorer les niveaux et de tuer les ennemis, en tâchant 
 Le joueur utilise pour ses animations et son contrôle le nouvel input system d'Unity, ainsi que des comportements à base de states dans un Animator dédié. Les ennemis utilisent également un système de states, dont certains comportements sont partagés avec le joueur (comme le système de Stun, par exemple).
 
 Le générateur de map est composée de plusieurs classes :
-Un scriptableObject MapRoom qui contient le prefab d'une salle
-Un scriptableObject RoomList qui contient toutes les MapRoom ayant la même configuration de portes
-Un struct DoorConfig qui contient 4 booléennes correspondantes à quelle portes sont ouvertes ou fermé dans une salle (en haut, en bas, a gauche et a droite)
-Un ScriptableObject GeneratorData  qui contient toutes les données nécéssaires pour la génération de map (les roomlists pour chaque configuration de salle possible, la longueur du donjon en nombre de salle, la largeur et longueur de la map en nombre de salle, la taille physique des salles, et toutes les salles de départ et de fin)
-Un MonoBehaviour MapGenerator qui contient toute la logique pour la génération de map
+Un scriptableObject MapRoom qui contient le prefab d'une salle  
+Un scriptableObject RoomList qui contient toutes les MapRoom ayant la même configuration de portes  
+Un struct DoorConfig qui contient 4 booléennes correspondantes à quelle portes sont ouvertes ou fermé dans une salle (en haut, en bas, a gauche et a droite)  
+Un ScriptableObject GeneratorData  qui contient toutes les données nécéssaires pour la génération de map (les roomlists pour chaque configuration de salle possible, la longueur du donjon en nombre de salle, la largeur et longueur de la map en nombre de salle, la taille physique des salles, et toutes les salles de départ et de fin)  
+Un MonoBehaviour MapGenerator qui contient toute la logique pour la génération de map  
 
 La génération de map se fait en plusieurs étape : 
-La génération de chemin, qui génère une liste de Vector2Int qui représente le chemin de la map, de la première à la dernière salle, et est généré en prennant en compte la taille de la map et la longueur de chemin demandée
-La génération de doorconfig, qui calcule les configurations de portes de chaque salle du chemin selon la salle précédente et la salle suivante
-Le choix de salle, qui choisit une salle au hasard dans la roomlist correspondante à la doorconfig de la salle actuelle
-L'instantiation de la map, qui instantie les préfabs de chaque salle de la map dans les bonnes positions
+La génération de chemin, qui génère une liste de Vector2Int qui représente le chemin de la map, de la première à la dernière salle, et est généré en prennant en compte la taille de la map et la longueur de chemin demandée  
+La génération de doorconfig, qui calcule les configurations de portes de chaque salle du chemin selon la salle précédente et la salle suivante  
+Le choix de salle, qui choisit une salle au hasard dans la roomlist correspondante à la doorconfig de la salle actuelle  
+L'instantiation de la map, qui instantie les préfabs de chaque salle de la map dans les bonnes positions  
 
 # Vidéo
 Lien de la vidéo : 
